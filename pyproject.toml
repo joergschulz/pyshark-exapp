@@ -1,0 +1,19 @@
+[project]
+name = "pyshark-exapp"
+version = "0.0.1"
+dependencies = [
+# dependencies of pyshark
+'lxml', 'termcolor', 'packaging', 'appdirs'
+]
+
+[project.scripts]
+pyshark-exapp = "pyshark_exapp.main:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.vendoring]
+destination = "src/pyshark_exapp/_vendor"
+namespace = "pyshark_exapp._vendor"
+requirements = "vendor.txt"

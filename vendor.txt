@@ -1,0 +1,1 @@
+pyshark @ git+https://github.com/joergschulz/pyshark@f670f68#subdirectory=src
