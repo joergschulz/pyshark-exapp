@@ -43,14 +43,19 @@ async def packet_print(p):
     i=i+1
     print(f'packet {i}')
 
+def capture():
+    c.apply_on_packets( packet_print )
 
 def main():
     print('Hello')
     print(pyshark.__path__)
-    thread_gui = threading.Thread( target=win )
-    thread_gui.start()
 
-    c.apply_on_packets( packet_print )
+    # thread_gui = threading.Thread( target=win )
+    # thread_gui.start()
+    # thread_gui.join()
 
-    thread_gui.join()
+    thread_capture = threading.Thread( target=capture )
+    thread_capture.start()
+    win()
+    thread_capture.join()
 
